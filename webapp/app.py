@@ -14,7 +14,7 @@ DBPWD = os.environ.get("DBPWD") or "password"
 DATABASE = os.environ.get("DATABASE") or "employees"
 DBPORT = int(os.environ.get("DBPORT"))
 GROUP_NAME = os.environ.get('GROUP_NAME')
-BACKGROUND_URL = os.environ.get('image1') or "failed to load"
+BACKGROUND_URL = os.environ.get('backgroundimg1') or "failed to load"
     
 
 # Create a connection to the MySQL database
