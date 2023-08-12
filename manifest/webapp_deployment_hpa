@@ -17,7 +17,7 @@ spec:
       serviceAccountName: clo835
       containers:
         - name: e-webapp
-          image: 678092784151.dkr.ecr.us-east-1.amazonaws.com/finalproject-webapp:v2.0
+          image: 139675527364.dkr.ecr.us-east-1.amazonaws.com/finalproject-webapp:appv1.0
           ports: 
             - containerPort: 81
               protocol: TCP
