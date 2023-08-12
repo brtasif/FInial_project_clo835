@@ -8,7 +8,7 @@ data:
   DBPORT: "3306"
   GROUP_NAME: "GROUP11"
   IMAGE_S3: "https://background-image-clo835.s3.amazonaws.com/"
-  image : |
+  BACKGROUND_IMAGE_JSON: |
     {
-      "backgroundimg1" : "https://background-image-clo835.s3.amazonaws.com/sample.jpg"
+      "backgroundimg1": "https://background-image-clo835.s3.amazonaws.com/sample.jpg"
     }

@@ -14,8 +14,20 @@ DBPWD = os.environ.get("DBPWD") or "password"
 DATABASE = os.environ.get("DATABASE") or "employees"
 DBPORT = int(os.environ.get("DBPORT"))
 GROUP_NAME = os.environ.get('GROUP_NAME')
-BACKGROUND_URL = os.environ.get('backgroundimg1') or "failed to load"
+#BACKGROUND_URL = os.environ.get('backgroundimg1') or "failed to load"
     
+import json
+
+# ...
+
+BACKGROUND_JSON = os.environ.get('BACKGROUND_IMAGE_JSON')  # Get the JSON string
+if BACKGROUND_JSON:
+    background_data = json.loads(BACKGROUND_JSON)  # Parse the JSON string
+    BACKGROUND_URL = background_data.get('backgroundimg1', 'failed to load')  # Extract the value
+else:
+    BACKGROUND_URL = 'failed to load'
+
+# ...
 
 # Create a connection to the MySQL database
 db_conn = connections.Connection(

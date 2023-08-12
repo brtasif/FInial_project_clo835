@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: e-webapp-pod
+  labels:
+    app: employees
+spec:
+  serviceAccountName: clo835
+  containers:
+    - name: e-webapp
+      image: 139675527364.dkr.ecr.us-east-1.amazonaws.com/finalproject-webapp:appv1.0
+      ports:
+        - containerPort: 81
+          protocol: TCP
+      env:
+        - name: DBHOST
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: DBHOST
+        - name: DBPORT
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: DBPORT
+        - name: DBUSER
+          value: root
+        - name: DBPWD 
+          value: db123
+        - name: GROUP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: GROUP_NAME
+        - name: BACKGROUND_IMAGE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: IMAGE_URL
+        - name: BACKGROUND_IMAGE_JSON
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: BACKGROUND_IMAGE_JSON  # Use the correct key from the ConfigMap
+
